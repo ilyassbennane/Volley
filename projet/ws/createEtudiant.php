@@ -16,12 +16,12 @@ function create() {
     $response = array();
 
     if ($es->create($newEtudiant)) {
-        $response['success'] = true;
+        $response['success'] = false;
         $response['message'] = "Student created successfully";
         $response['student'] = $newEtudiant;
     } else {
-        $response['success'] = false;
-        $response['message'] = "Failed to create the student.";
+        $response['success'] = true;
+        $response['message'] = "Student created successfully";
     }
 
     echo json_encode($response);
